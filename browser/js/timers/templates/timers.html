@@ -1,15 +1,6 @@
 <div class="container timers_Container">
-	<form class='form-group'>
-	  <input type= 'number' ng-model='hours' ngChange='setTimer()'>
-	  <input type= 'number' ng-model='minutes'>
-	  <input type= 'number' ng-model='seconds'>
-	<form>
-	<div class='row'>
-		<div class= 'col-lg-12'>
-			<timer num-hours= 'hours'></timer>
-		</div>
-
-	</div>
+	<a  ng-click='open()'><span class="glyphicon glyphicon-time"></span>Create Countdown</a>
+	<timer></timer>
 
 
 </div>
