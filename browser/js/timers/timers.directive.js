@@ -6,6 +6,7 @@ app.directive('timer', function ($rootScope, AuthService, AUTH_EVENTS, $state) {
             numHours: '='
         },
         templateUrl: 'js/timers/templates/timer.html',
+        controller: 'TimersController'
 
     };
 
