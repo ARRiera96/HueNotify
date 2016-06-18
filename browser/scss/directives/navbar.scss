@@ -76,4 +76,27 @@ navbar {
 
   }
 
+
+
+}
+
+
+.counter-holder {
+  padding: 40px 80px;
+  background: #fff;
+  display: inline-block;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border-radius: 3px;
+  box-shadow: 0px 3px 3px rgba(0,0,0,0.13);
+}
+.counter-holder .counter {
+  font-size: 40px;
+  font-weight: 300;
+  margin: 20px auto;
+  color: #666;
+  text-shadow: 0px 1px 0px rgba(0,0,0,0.1);
+  float: left;
+  display: inline-block;
+  margin-right: 20px;
 }

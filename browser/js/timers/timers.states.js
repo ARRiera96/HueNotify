@@ -14,7 +14,7 @@ app.config(($stateProvider) => {
   })
 
   $stateProvider.state('timer', {
-    url: '/timers',
+    url: '/timer',
     templateUrl: 'js/timers/templates/timer.html',
     controller: 'TimerController',
     resolve: {
