@@ -1,17 +1,15 @@
 'use strict'
 
-app.controller('TimersController', function($scope, $uibModal, $timeout){
+app.controller('TimersController', function($scope, $uibModal, $timeout, HueFactory){
 
 	// $scope.counter=10;
 	// 
 	$scope.$on('timer-stopped', function(){
 		console.log("The timer ended!!");
+		HueFactory.changeColor();
 	})
 
-	$scope.logIt= function(){
-		console.log("IN log it");
-		$scope.counter= 10;
-		// $scope.$broadcast('timer-reset');
+	$scope.timerStart= function(){
 		$scope.$evalAsync();
 		$timeout(function(){
 			$scope.$broadcast('timer-start');
@@ -32,8 +30,7 @@ app.controller('TimersController', function($scope, $uibModal, $timeout){
 
   modalInstance.result.then(function (counter) {
     $scope.counter = counter;
-    // $scope.$broadcast('timer-reset');
-    $scope.$broadcast('timer-start');
+    $scope.timerStart();
   });
 };
 
