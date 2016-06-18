@@ -3,10 +3,21 @@ navbar {
 
   background: white;
 
+  .navbar-nav{
+   display: inline-block;
+  float: none;
+  padding: 0;
+  text-align:center;
+  margin-left: 120px;
+  }
+
   .container {
     width: 91%;
     max-width: 1340px;
     padding-top: 20px;
+    display: inline-block;
+    text-align:center;
+
   }
 
   fullstack-logo {
@@ -55,6 +66,14 @@ navbar {
       color: #f30046;
       cursor: pointer;
     }
+  }
+
+  .hdr{
+   margin: 0;
+   position: absolute;
+   left: 160px;
+   font-size: 30px;
+
   }
 
 }
