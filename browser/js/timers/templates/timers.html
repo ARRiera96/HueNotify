@@ -1,6 +1,6 @@
 <div class="container timers_Container">
 	<a  ng-click='open()'><span class="glyphicon glyphicon-time"></span>Create Countdown</a>
-	<timer></timer>
-
-
+<br>
+<!-- <timer autostart="true" countdown="90061"> {{days}} day{{daysS}}, {{hours}} hour{{hoursS}}, {{minutes}} minute{{minutesS}}, {{seconds}} second{{secondsS}}. </timer> -->
+<timer interval="1000" countdown="3600" >{{days}} day{{daysS}}, {{hours}} hour{{hoursS}}, {{minutes}} minute{{minutesS}}, {{seconds}} second{{secondsS}}.</timer>
 </div>
