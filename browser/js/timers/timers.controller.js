@@ -1,15 +1,24 @@
 'use strict'
 
-app.controller('TimersController', function($scope, $uibModal){
+app.controller('TimersController', function($scope, $uibModal, $timeout){
 
-	$scope.counter=10;
+	// $scope.counter=10;
+	// 
+	$scope.$on('timer-stopped', function(){
+		console.log("The timer ended!!");
+	})
 
 	$scope.logIt= function(){
-		$scope.$broadcast('timer-reset');
-		$scope.counter= 1000;
-
-		$scope.$broadcast('timer-start');
+		console.log("IN log it");
+		$scope.counter= 10;
+		// $scope.$broadcast('timer-reset');
+		$scope.$evalAsync();
+		$timeout(function(){
+			$scope.$broadcast('timer-start');
+		}, 500)
 	}
+
+
 
 
 
