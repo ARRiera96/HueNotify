@@ -28,8 +28,10 @@ app.controller('TimersController', function($scope, $uibModal, $timeout, HueFact
     controller: 'ModalInstanceCtrl'
   });
 
-  modalInstance.result.then(function (counter) {
-    $scope.counter = counter;
+  modalInstance.result.then(function (result) {
+  	$scope.lightcolor = result.lightcolor;
+    $scope.counter = result.counter;
+    console.log("!!!!", $scope.lightcolor, $scope.counter);
     $scope.timerStart();
   });
 };
