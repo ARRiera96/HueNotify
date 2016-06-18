@@ -1,8 +1,30 @@
 <div class="container ">
-	<a  ng-click='open()'><span class="glyphicon glyphicon-time"></span>Start Countdown</a>
 <br>
 
 <div class="counter-holder">
+	<a  ng-click='open()'><span class="glyphicon glyphicon-time"></span>Start Countdown</a>
+	<timer autostart="false" interval="1000" countdown="counter">
+		<div class="counter">
+			<span class="blue">{{days}}</span> day{{daysS}}
+		</div>
+		<div class="counter">
+			<span class="blue">{{hours}}</span> hour{{hoursS}}
+		</div>
+		<div class="counter">
+			<span class="blue">{{minutes}}</span> minute{{minutesS}}
+		</div>
+		<div class="counter">
+			<span class="blue">{{seconds}}</span> second{{secondsS}}
+		</div>
+	</timer>
+</div>
+
+<div class="container ">
+
+<br>
+
+<div class="counter-holder">
+	<a  ng-click='open()'><span class="glyphicon glyphicon-time"></span>Start Countdown</a>
 	<timer autostart="false" interval="1000" countdown="counter">
 		<div class="counter">
 			<span class="blue">{{days}}</span> day{{daysS}}

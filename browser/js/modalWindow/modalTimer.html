@@ -14,12 +14,9 @@
       <div class="form-group">
         <label>Light Color</label>
         <select ng-model='result.lightcolor' required>
-            <option value="red">Red</option>
-            <option value="blue">Blue</option>
-            <option value="green">Green</option>
+            <option ng-repeat='color in colors' value="{{color}}">{{color}}</option>
         </select>
       </div>
-      <div>{{ lightcolor }}</div>
     </form>
 </div>
 <div class="modal-footer">

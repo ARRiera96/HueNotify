@@ -6,7 +6,7 @@ app.controller('TimersController', function($scope, $uibModal, $timeout, HueFact
 	// 
 	$scope.$on('timer-stopped', function(){
 		console.log("The timer ended!!");
-		HueFactory.changeColor();
+		HueFactory.changeColor($scope.lightcolor);
 	})
 
 	$scope.timerStart= function(){
