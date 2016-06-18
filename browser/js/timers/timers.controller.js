@@ -3,17 +3,24 @@
 app.controller('TimersController', function($scope, $uibModal, $timeout, HueFactory){
 
 	// $scope.counter=10;
-	// 
-	$scope.$on('timer-stopped', function(){
-		console.log("The timer ended!!");
-		HueFactory.changeColor($scope.lightcolor);
-	})
+	//
+	$scope.timers= [];
+
+	// $scope.$on('timer-stopped', function(){
+	// 	console.log("The timer ended!!");
+	// 	console.log(this);
+	// 	HueFactory.changeColor(this.lightcolor);
+	// })
+
 
 	$scope.timerStart= function(){
+		var currentTimer = this;
 		$scope.$evalAsync();
-		$timeout(function(){
-			$scope.$broadcast('timer-start');
-		}, 500)
+		this.$broadcast('timer-start');
+		this.$on('timer-stopped', function(){
+			console.log(currentTimer.timer.lightcolor);
+			HueFactory.changeColor(currentTimer.timer.lightcolor);
+		})
 	}
 
 
@@ -29,10 +36,7 @@ app.controller('TimersController', function($scope, $uibModal, $timeout, HueFact
   });
 
   modalInstance.result.then(function (result) {
-  	$scope.lightcolor = result.lightcolor;
-    $scope.counter = result.counter;
-    console.log("!!!!", $scope.lightcolor, $scope.counter);
-    $scope.timerStart();
+  	$scope.timers.push(result);
   });
 };
 
