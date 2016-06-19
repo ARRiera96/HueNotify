@@ -1,9 +1,8 @@
-<a  ng-click='open()'><span class="glyphicon glyphicon-time"></span>Create Countdown</a>
-<div class="container ">
-<div class="counter-holder" >
+<div><a  ng-click='open()'><span class="glyphicon glyphicon-time"></span>Create Countdown</a></div>
+<div class="counter-holder" ng-show='timers.length' >
 	<timer autostart="false" interval="1000" ng-repeat='timer in timers' countdown="timer.counter">
 	<h2>
-		{{timer.label}}
+
 	</h2>
 		<div class="counter">
 			<span class="blue">{{hours}}</span> hour{{hoursS}}
@@ -15,15 +14,17 @@
 			<span class="blue">{{seconds}}</span> second{{secondsS}}
 		</div>
 	<div>
-	<a ng-click="timerStart()">Start the timer</a>
+	<a ng-click="start()">Start the timer</a>
 	</div>
 	<div>
-	<a ng-click="timerPause()">Pause the timer</a>
+	<a ng-click="pause()">Pause the timer</a>
+	</div>
+	<div>
+	<a ng-click="resume()">Resume the timer</a>
 	</div>
 	</timer>
 
 </div>
 
-</div>
 
 <!-- <a href="#" class="myButton"><span class='glyphicon glyphicon-time'>Create Countdown</span></a> -->

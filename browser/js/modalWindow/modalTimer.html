@@ -4,12 +4,20 @@
 <div class="modal-body">
     <form name="categoryForm">
       <div class="form-group">
+        <label>Label</label>
+        <input type="text" class="form-control" ng-model='result.label'  required />
+      </div>
+      <div class="form-group">
         <label>Hours</label>
-        <input type="number" class="form-control" ng-model='hours'  max="24" required />
+        <input type="number" class="form-control" ng-model='hours'  max="24"  />
       </div>
       <div class="form-group">
         <label>Minutes</label>
-        <input type="number" class="form-control" ng-model='minutes'  value='0' max="59" required />
+        <input type="number" class="form-control" ng-model='minutes'  value='0' max="59"  />
+      </div>
+      <div class="form-group">
+        <label>Seconds</label>
+        <input type="number" class="form-control" ng-model='seconds'  value='0' min='0' max="59" required />
       </div>
       <div class="form-group">
         <label>Light Color</label>

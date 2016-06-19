@@ -1,19 +1,17 @@
 'use strict'
 
-app.controller('TimersController', function($scope, $uibModal, $timeout, HueFactory){
+app.controller('TimersController', function($scope, $rootScope, $uibModal, $timeout, HueFactory, localStorageService){
 
-	// $scope.counter=10;
-	//
-	$scope.timers= [];
+	var timers = localStorageService.get('timers');
 
-	// $scope.$on('timer-stopped', function(){
-	// 	console.log("The timer ended!!");
-	// 	console.log(this);
-	// 	HueFactory.changeColor(this.lightcolor);
-	// })
+	$scope.timers = timers || [];
+
+	$scope.$watch('timers', function () {
+	  localStorageService.set('timers', $scope.timers);
+	}, true);
 
 
-	$scope.timerStart= function(){
+	$scope.start= function(){
 		var currentTimer = this;
 		$scope.$evalAsync();
 		this.$broadcast('timer-start');
@@ -23,22 +21,28 @@ app.controller('TimersController', function($scope, $uibModal, $timeout, HueFact
 		})
 	}
 
+	$scope.pause= function(){
+		this.$broadcast('timer-stop');
+	}
+
+	$scope.resume= function(){
+		this.$broadcast('timer-resume');
+	}
 
 
 
+	$scope.open = function () {
+	  var modalInstance = $uibModal.open({
+	    animation: $scope.animationsEnabled,
+	    templateUrl: './js/modalWindow/modalTimer.html',
+	    scope: $scope,
+	    controller: 'ModalInstanceCtrl'
+	  });
 
-  $scope.open = function () {
-  var modalInstance = $uibModal.open({
-    animation: $scope.animationsEnabled,
-    templateUrl: './js/modalWindow/modalTimer.html',
-    scope: $scope,
-    controller: 'ModalInstanceCtrl'
-  });
-
-  modalInstance.result.then(function (result) {
-  	$scope.timers.push(result);
-  });
-};
+	  modalInstance.result.then(function (result) {
+	  	$scope.timers.push(result);
+	  });
+	};
 
 
 })
