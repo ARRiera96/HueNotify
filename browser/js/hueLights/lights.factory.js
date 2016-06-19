@@ -17,6 +17,12 @@ app.factory('HueFactory', function($http){
 			.then(function(){
 				console.log("blue flash came back");
 			});
+		},
+		turnLightsOff: function(){
+			$http.put('/api/hue', {"on": false})
+			.then(function(){
+				console.log("Lights turned off");
+			});
 		}
 
 	}

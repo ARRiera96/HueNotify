@@ -29,7 +29,6 @@ app.controller('TimersController', function($scope, $rootScope, $uibModal, $time
 	}
 
 	$scope.delete= function(){
-		console.log($scope.timers);
 		var label= this.timer.label;
 		var index;
 		$scope.timers.forEach(function(timer, i){
@@ -39,6 +38,10 @@ app.controller('TimersController', function($scope, $rootScope, $uibModal, $time
 		});
 		$scope.timers.splice(index, 1)
 
+	}
+
+	$scope.lightOff= function(){
+		HueFactory.turnLightsOff();
 	}
 
 
