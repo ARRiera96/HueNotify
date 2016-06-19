@@ -13,7 +13,7 @@ app.factory('HueFactory', function($http){
 		},
 
 		blueFlash: function(){
-			$http.put('/api/hue', {"on": true, xy: [0.139,0.081], "alarm": "select"})
+			$http.put('/api/hue', {"on": true, "effect": "colorloop"})
 			.then(function(){
 				console.log("blue flash came back");
 			});
