@@ -28,6 +28,19 @@ app.controller('TimersController', function($scope, $rootScope, $uibModal, $time
 		this.$broadcast('timer-resume');
 	}
 
+	$scope.delete= function(){
+		console.log($scope.timers);
+		var label= this.timer.label;
+		var index;
+		$scope.timers.forEach(function(timer, i){
+			if(timer.label=== label){
+				index=i;
+			}
+		});
+		$scope.timers.splice(index, 1)
+
+	}
+
 
 
 	$scope.open = function () {

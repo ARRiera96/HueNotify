@@ -14,10 +14,12 @@ module.exports = router;
 
  //Change all the lights
  router.put('/', function(req,res){
- 	var state = lightState.create().brightness(100).rgb(10, 7, 12).on().colorLoop();
- 	     api.setLightState(3, state);
- 	     api.setLightState(2,state)
- 	     api.setLightState(1,state)
+ 	// var state = lightState.create().brightness(100).rgb(10, 7, 12).on().colorLoop();
+ 	var state= req.body;
+ 	console.log(state);
+	 api.setLightState(3, state);
+	 api.setLightState(2,state)
+	 api.setLightState(1,state)
 
  });
 
