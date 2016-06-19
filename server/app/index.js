@@ -3,6 +3,7 @@ var path = require('path');
 var express = require('express');
 var app = express();
 
+
 module.exports = function (db) {
 
     // Pass our express application pipeline into the configuration
@@ -12,6 +13,7 @@ module.exports = function (db) {
     // Routes that will be accessed via AJAX should be prepended with
     // /api so they are isolated from our GET /* wildcard.
     app.use('/api', require('./routes'));
+
 
 
     /*

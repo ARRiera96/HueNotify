@@ -16,7 +16,6 @@ app.controller('TimersController', function($scope, $rootScope, $uibModal, $time
 		$scope.$evalAsync();
 		this.$broadcast('timer-start');
 		this.$on('timer-stopped', function(){
-			console.log(currentTimer.timer.lightcolor);
 			HueFactory.changeColor(currentTimer.timer.lightcolor);
 		})
 	}

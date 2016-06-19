@@ -17,6 +17,7 @@ body {
 #main {
   padding-top: 60px;
   margin: 0 auto;
+  text-align: center;
 }
 
 @import 'directives/main';
@@ -24,4 +25,5 @@ body {
 @import 'about/main';
 @import 'tutorial/main';
 @import 'login/main';
-@import 'buttons/activation_button.scss'
+@import 'buttons/activation_button.scss';
+@import 'timers/main';
