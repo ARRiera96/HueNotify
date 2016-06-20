@@ -1,12 +1,33 @@
 <section id="home">
+	<div class='hueCtrl'>
+		<h4>Light Controls</h4>
+		<br>
+		<br>
+		<form class='hueForm' ng-submit="activateLights()">
+			<div class="form-group row">
+			  <label>Light 1 Color </label>
+			  <select ng-model='light1.color' required>
+			      <option ng-repeat='color in colors' value="{{color}}">{{color}}</option>
+			  </select>
+			</div>
+			<div class="form-group row">
+			  <label>Light 2 Color</label>
+			  <select ng-model='light2.color' required>
+			      <option ng-repeat='color in colors' value="{{color}}">{{color}}</option>
+			  </select>
+			</div>
+			<div class="form-group row">
+			  <label>Light 3 Color </label>
+			  <select ng-model='light3.color' required>
+			      <option ng-repeat='color in colors' value="{{color}}">{{color}}</option>
+			  </select>
+			</div>
+			<button type="submit" class="btn btn-primary">Activate</button>
+			<button class="btn btn-primary" ng-click='loop()'>ColorLoop</button>
+		</form>
+	</div>
 
-	<i class="fa fa-circle-o-notch" aria-hidden="true"> Start Color Loop</i>
 		<h3>Global Feels</h3>
 		<i ng-click="globalFeels()" style="color:#4679BD;font-size:400px"class="fa fa-globe globe" aria-hidden="true"></i>
-   <!-- <div class="round-button">
-   	<div class="round-button-circle">
-   		<a href="#" class="round-button" ng-click='blueFlash()'>Click Me</a>
-   	</div>
-   </div> -->
 
 </section>

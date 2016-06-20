@@ -1,27 +1,10 @@
 'use strict'
 
-app.config(($stateProvider) => {
-
+app.config(function($stateProvider){
   $stateProvider.state('timers', {
     url: '/timers',
     templateUrl: 'js/timers/templates/timers.html',
-    controller: 'TimersController',
-    // resolve: {
-    //   // allOrders: (OrdersFactory) => {
-    //   //   return OrdersFactory.getAll()
-    //   // },
-    // }
-  })
-
-  $stateProvider.state('timer', {
-    url: '/timer',
-    templateUrl: 'js/timers/templates/timer.html',
-    controller: 'TimerController',
-    resolve: {
-      // allOrders: (OrdersFactory) => {
-      //   return OrdersFactory.getAll()
-      // },
-    }
+    controller: 'TimersController'
   })
 
 });

@@ -1,0 +1,14 @@
+.hueCtrl{
+	position: absolute;
+	left: 200px;
+
+	.hueForm{
+		padding: 20px 20px;
+		border-radius: 3px;
+		box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.13);
+		.colorLoop{
+			background-color: red;
+		}
+	}
+}
+

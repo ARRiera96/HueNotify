@@ -1,14 +1,13 @@
 'use strict'
 
 app.controller('TimersController', function($scope, $rootScope, $uibModal, $timeout, HueFactory, localStorageService){
-
 	var timers = localStorageService.get('timers');
 
 	$scope.timers = timers || [];
 
 	$scope.$watch('timers', function () {
-	  localStorageService.set('timers', $scope.timers);
-	}, true);
+		localStorageService.set('timers', $scope.timers);
+	},true);
 
 
 	$scope.start= function(){
@@ -48,7 +47,7 @@ app.controller('TimersController', function($scope, $rootScope, $uibModal, $time
 
 	$scope.open = function () {
 	  var modalInstance = $uibModal.open({
-	    animation: $scope.animationsEnabled,
+	  	animation: $scope.animationsEnabled,
 	    templateUrl: './js/modalWindow/modalTimer.html',
 	    scope: $scope,
 	    controller: 'ModalInstanceCtrl'

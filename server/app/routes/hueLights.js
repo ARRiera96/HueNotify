@@ -14,16 +14,29 @@ module.exports = router;
 
  //Change all the lights
  router.put('/', function(req,res){
- 	// var state = lightState.create().brightness(100).rgb(10, 7, 12).on().colorLoop();
- 	console.log("Im in here hello");
  	var state= req.body;
- 	console.log(state);
 	 api.setLightState(3, state);
 	 api.setLightState(2,state)
 	 api.setLightState(1,state)
 	 res.sendStatus(201);
 
  });
+
+//change all lights with different settings
+router.put('/all', function(req, res){
+	var lights= req.body;
+	api.setLightState(1, {"on":true, xy: lights.light1,"effect": "none"});
+	api.setLightState(2, {"on":true, xy: lights.light2,"effect": "none"});
+	api.setLightState(3, {"on":true, xy: lights.light3,"effect": "none"});
+
+});
+
+router.put('/loop', function(req, res){
+	console.log("Right here:",req.body);
+	for(var i=1; i<4; i++){
+		api.setLightState(i,req.body);
+	}
+});
 
  //Change a specific light
  router.put('/:lightId', function(req,res){
