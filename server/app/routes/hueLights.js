@@ -32,7 +32,6 @@ router.put('/all', function(req, res){
 });
 
 router.put('/loop', function(req, res){
-	console.log("Right here:",req.body);
 	for(var i=1; i<4; i++){
 		api.setLightState(i,req.body);
 	}
@@ -40,7 +39,6 @@ router.put('/loop', function(req, res){
 
  //Change a specific light
  router.put('/:lightId', function(req,res){
- 	console.log("In here");
  	var state = lightState.create().off();
  	     api.setLightState(1, state)
  	     .then(function(){

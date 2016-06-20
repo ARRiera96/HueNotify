@@ -21,6 +21,7 @@ app.controller('TimersController', function($scope, $rootScope, $uibModal, $time
 
 	$scope.pause= function(){
 		this.$broadcast('timer-stop');
+		HueFactory.turnLightsOff();
 	}
 
 	$scope.resume= function(){

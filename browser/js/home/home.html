@@ -7,23 +7,27 @@
 			<div class="form-group row">
 			  <label>Light 1 Color </label>
 			  <select ng-model='light1.color' required>
+			  	  <option value=''><option>
 			      <option ng-repeat='color in colors' value="{{color}}">{{color}}</option>
 			  </select>
 			</div>
 			<div class="form-group row">
 			  <label>Light 2 Color</label>
 			  <select ng-model='light2.color' required>
+			  	  <option value=''><option>
 			      <option ng-repeat='color in colors' value="{{color}}">{{color}}</option>
 			  </select>
 			</div>
 			<div class="form-group row">
 			  <label>Light 3 Color </label>
 			  <select ng-model='light3.color' required>
+			  	  <option value=''><option>
 			      <option ng-repeat='color in colors' value="{{color}}">{{color}}</option>
 			  </select>
 			</div>
 			<button type="submit" class="btn btn-primary">Activate</button>
-			<button class="btn btn-primary" ng-click='loop()'>ColorLoop</button>
+			<button type='button' class="btn btn-primary" ng-click='loop()'>ColorLoop</button>
+			<a ng-click="lightOff()"><span class='glyphicon glyphicon-off'></a>
 		</form>
 	</div>
 

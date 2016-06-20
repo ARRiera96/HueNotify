@@ -13,38 +13,25 @@ app.factory('HueFactory', function($http){
                   "Medium Spring Green": [0.1919,0.524],
                   "Firebrick": [0.6621,0.3023],
                   "Dark Red": [0.7,0.2986],
-                  "Blue": [0.139,0.081]
+                  "Blue": [0.139,0.081],
+                  "Medium Spring Green": [0.1919,0.524]
               },
 
 		changeColor: function(color){
-			$http.put('/api/hue',{"on":true, xy:[this.colors[color][0], this.colors[color][1]], "alert": "lselect", "effect": "none"})
-			.then(function(){
-				console.log("Color changed successfully");
-			});
+			$http.put('/api/hue',{"on":true, xy:[this.colors[color][0], this.colors[color][1]], "alert": "lselect", "effect": "none"});
 		},
 
 		changeState: function(color){
-			console.log(color);
-			$http.put('/api/hue', {"on":true, xy:[this.colors[color][0], this.colors[color][1]],"effect": "none"})
-			.then(function(){
-				console.log("blue flash came back");
-			});
+			$http.put('/api/hue', {"on":true, xy:[this.colors[color][0], this.colors[color][1]],"effect": "none"});
 		},
 		turnLightsOff: function(){
-			$http.put('/api/hue', {"on": false})
-			.then(function(){
-				console.log("Lights turned off");
-			});
+			$http.put('/api/hue', {"on": false});
 		},
 		activateAllLights: function(lights){
 			lights.light1= this.colors[lights.light1];
 			lights.light2= this.colors[lights.light2];
 			lights.light3= this.colors[lights.light3];
-			console.log(lights);
-			$http.put('/api/hue/all',lights)
-			.then(function(){
-				console.log("Noches de fantasia");
-			})
+			$http.put('/api/hue/all',lights);
 		},
 		colorLoop: function(){
 			$http.put('/api/hue/loop', {"on":true, xy:[0.6621,0.3023],"effect": "colorloop"})
