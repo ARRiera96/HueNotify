@@ -3,7 +3,7 @@
 app.config(($stateProvider) => {
 
   $stateProvider.state('notifications', {
-    url: '/timers',
+    url: '/notifications',
     templateUrl: 'js/notifications/templates/notifications.html',
     controller: 'NotificationsController',
     resolve: {
